@@ -3,8 +3,6 @@ var cors = require('cors');
 const path = require('path');
 const connection =require('./connection');
 
-//rutas
-//--const userRoute = require('./routes/user');
 
 //const path = require('path');
 
@@ -15,9 +13,13 @@ app.use(cors({origen:"*"}));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+//rutas
+const userRoute = require('./routes/usuario');
+
+
 //--app.use('/uploads',express.static(path.resolve('uploads')));
 //rutas componentes
-//--app.use('/user',userRoute);
+app.use('/usuarios',userRoute);
 
 
 module.exports=app;
